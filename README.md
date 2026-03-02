@@ -1,67 +1,60 @@
-# 📘 MDTO XML-Schema
+# MDTO XML Schema – Documentatie en Voorbeelden
 
 ## Inleiding
-
-**MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie)** is een norm voor het eenduidig vastleggen en uitwisselen van metagegevens, met het doel de **duurzame toegankelijkheid van overheidsinformatie** mogelijk te maken.  
-
-Het schema richt zich op generieke metagegevens die gelden voor (bijna) alle overheidsorganisaties, werkprocessen en informatiesoorten.  
-MDTO sluit aan op de verplichtingen zoals opgenomen in de *Archiefregeling 2009*.  
-
-➡️ Meer informatie: [Nationaal Archief – MDTO](https://www.nationaalarchief.nl/archiveren/mdto)
-
-----
-
-## Doel van het XML-schema
-
-Het XML-schema beschrijft de XML-syntax waarmee MDTO-metagegevens conform het metagegevensmodel kunnen worden vastgelegd en uitgewisseld.  
-Het schema maakt het mogelijk om systemen en koppelingen te ontwerpen waarin consistente metagegevens worden gebruikt — wat bijdraagt aan betere gegevensuitwisseling, lagere vertaalkosten en hogere kwaliteit van metagegevens.
-
-📄 **Schema-locatie:**  
-[https://www.nationaalarchief.nl/archiveren/mdto/xml-schema](https://www.nationaalarchief.nl/archiveren/mdto/xml-schema)
+Dit gedeelte beschrijft welke documenten de documentatieset bevat en hoe het XML-schema is afgeleid van het MDTO-metagegevensschema.
 
 ---
 
-## Namespace en opbouw
+## Toelichting op de voorbeelden
 
-- **Namespace:** `https://www.nationaalarchief.nl/mdto`  
-- **Hoofdelement:** `<MDTO>` van het type `mdtoType`  
-- Binnen het schema worden o.a. de objecttypen **Informatieobject** en **Bestand** onderscheiden, elk met hun eigen set metagegevens.  
-- Het schema is uitbreidbaar en kan worden toegepast in verschillende contexten binnen het archief- en informatiemanagementdomein.
+De voorbeeldbestanden zijn uitsluitend ter informatie en maken **geen onderdeel uit van de definitie van het XML-schema**. Ze zijn dus ook **geen onderdeel van de norm**.
 
----
+Het doel van de voorbeelden is om de lezer een duidelijk beeld te geven van hoe een XML-bestand dat voldoet aan het XML-schema eruit kan zien. De voorbeelden zijn zo realistisch mogelijk opgesteld. Voor een zo volledig mogelijke representatie zijn daarnaast fictieve waarden gebruikt, of combinaties van waarden die in de praktijk niet of nauwelijks zullen voorkomen.
 
-## Versiebeheer en publicatie
+### Opgenomen voorbeelden
 
-Het schema wordt onderhouden en gepubliceerd door het **Nationaal Archief**.  
-Voor elke officiële wijziging wordt een nieuwe versie uitgegeven, bijvoorbeeld `MDTO-XML1.0.1.xsd`.  
+- **MDTO-XML 1.0.1 Voorbeeld Serie Informatieobject.xml**  
+  Metagegevens voor de serie:  
+  *“Deelprogramma Kust. Voorbereiding 2010-2014 adviezen en voorstellen voorkeursstrategie Kust en strategische beslissing Zand”*.
 
-Versies worden beheerd via **GitHub** en zijn publiek beschikbaar.  
-Gebruikers wordt aangeraden in hun implementaties en documentatie altijd de gebruikte schema-versie te vermelden.
+- **MDTO-XML 1.0.1 Voorbeeld Dossier Informatieobject.xml**  
+  Metagegevens voor het dossier:  
+  *“Brondocumenten en literatuur bij synthesedocument voorkeursstrategie Kust en strategische beslissing Zand”*.
 
-> **Tip:** Voor publicatie kan een stabiele URL worden gebruikt, zoals  
-> `https://www.nationaalarchief.nl/mdto/MDTO-XML.xsd`  
-> Deze kan verwijzen (redirecten) naar de meest recente versie, terwijl oudere versies onder hun specifieke naam blijven bestaan.
+- **MDTO-XML 1.0.1 Voorbeeld Archiefstuk Informatieobject.xml**  
+  Metagegevens voor het informatieobject:  
+  *“Atelier Kustkwaliteit, 2011. Ontwerpstudie Dwarsdoorsneden kust, vier Kustdoorsneden in beeld, Werkboek 2, Delft”*.
 
----
-
-## 📂 Voor wie is dit schema bedoeld?
-
-Het MDTO-schema is bedoeld voor:
-
-- Overheidsorganisaties die metadata van blijvend te bewaren informatieobjecten vastleggen en uitwisselen.  
-- Leveranciers van informatiesystemen en archiveringsoplossingen die interoperabiliteit en duurzame toegankelijkheid ondersteunen.  
-- Beheerders van informatiesystemen die gebruikmaken van koppelingen of uitwisselformaten tussen organisaties.
+- **MDTO-XML 1.0.1 Voorbeeld Bestand.xml**  
+  Metagegevens voor het bestand:  
+  *“DC-2015_1753-1.PDF”*, dat de representatie is van:  
+  *“Atelier Kustkwaliteit, 2011. Ontwerpstudie Dwarsdoorsneden kust, vier Kustdoorsneden in beeld, Werkboek 2, Delft”*.
 
 ---
 
-## 📌 Meer informatie
+## Relatie tussen het MDTO-metagegevensschema en het MDTO-XML schema
 
-- Website: [Nationaal Archief – MDTO](https://www.nationaalarchief.nl/archiveren/mdto)  
-- Schema’s: [XML-Schema – MDTO](https://www.nationaalarchief.nl/archiveren/mdto/xml-schema)  
-- Contact: [info@nationaalarchief.nl](mailto:info@nationaalarchief.nl)
+Het XML-schema is op de volgende manier afgeleid van het metagegevensschema:
 
----
+- Op het hoogste niveau bevat het schema één element **`MDTO`** van het type **`mdtoType`**.  
+  Dit element markeert dat het XML-bestand MDTO-metagegevens bevat.
 
-© Nationaal Archief – MDTO XML-Schema  
-Laatste update: **v1.0.2**
+- Een waarde van het type **`mdtoType`** is:
+  - een element **`informatieobject`**, of  
+  - een element **`bestand`**.  
+  Dit zijn de twee mogelijke hoofdstructuren binnen een XML-bestand met MDTO-metagegevens.
 
+- Voor elk object of gegevensgroep uit het metagegevensschema bevat het XML-schema een corresponderend **`<complexType>`** waarvan de naam eindigt op **`Type`**.
+
+- Elk object in MDTO bevat minimaal:
+  - een identificatie  
+  - een naam  
+
+  Deze attributen zijn opgenomen in **`objectType`** en worden als basis gebruikt voor:
+  - **`informatieobjectType`**
+  - **`bestandType`**
+
+  via:
+
+  ```xml
+  <xsd:extension base="objectType">
