@@ -1,0 +1,21 @@
+/* GitHub-like table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #d0d7de;
+    padding: 6px 13px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f6f8fa;
+}
+
+th {
+    background-color: #007bc7;
+    font-weight: 600;
+    color: white;
+}

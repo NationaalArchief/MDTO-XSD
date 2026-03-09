@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset='utf-8'>
+    <script src='js/respec.js' async class='remove'></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .sidelabel {
+            position: fixed;
+            -webkit-transform-origin: top right;
+            right: 100%;
+            top: 0;
+            -webkit-transform: rotate(-90deg);
+            padding: 5px 40px 5px 40px;
+            color: white;
+            white-space: nowrap;
+            z-index: 1;
+            font-size: 14px;
+            background-color: #0a4181;
+        }
+
+        .plain-table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: auto;
+        }
+
+        .plain-table td,
+        .plain-table tr,
+        .plain-table th {
+            padding: 1;
+            margin: 0;
+            border: none;
+            background: transparent;
+            white-space: nowrap;
+            /* voorkomt extra uitrekken */
+        }
+    </style>
+    <script class='remove'>
+        // All config options at https://respec.org/docs/
+        var respecConfig = {
+            // Working Groups ids at https://respec.org/w3c/groups/
+            format: "markdown",
+            publishDate: "2026-03-02",
+            //modificationDate: "2020-04-13",
+            addSectionLinks: false, // Controls if linked "§" section markers are added to a document. This is enabled by default for W3C documents.
+            //specStatus: "unofficial",
+            subtitle: "MDTO",
+            highlightVars: true,
+            noRecTrack: true,
+            editors: [{
+                name: "Nationaal Archief",
+                company: "Nationaal Archief",
+                companyURL: "https://www.nationaalarchief.nl/",
+                w3cid: 39125,
+            },],
+            specStatus: "base",
+            authors: [
+                {
+                    name: "Nationaal Archief",
+                    company: "Nationaal Archief",
+                    companyURL: "https://www.nationaalarchief.nl/",
+                    w3cid: 39125,
+                },
+            ],
+            noUI: false,
+            // license: "w3c-software-doc",
+            isPreview: false,
+            logos: [
+                {
+                    src: "images/logo.jpg",
+                    url: "https://www.nationaalarchief.nl/",
+                    alt: "Nationaal Archief",
+                    id: "Nationaal Archief Logo",
+                    width: 200,
+                },
+            ],
+            // Deze versie
+            // Laatste versie
+            latestVersion: "https://github.com/NationaalArchief/MDTO-SIP",
+            // Laatste werkversie
+            // edDraftURI: "https://www.w3.org/TR/example",
+
+            github: {
+                branch: "master",
+                repoURL: "https://github.com/NationaalArchief/MDTO-SIP",
+                //commitHistoryURL: "https://github.com/NationaalArchief/MDTO/commits/master/",
+            },
+            // See https://respec.org/docs/#xref for usage.
+            xref: "web-platform",
+            lint: false,
+            maxTocLevel: 3, // A number indicating the maximum depth of the table of contents, in case you wish to limit it so as to keep it more readable. Defaults to 0 which includes all levels.
+        };
+    </script>
+    <title>Veelgestelde vragen</title>
+</head>
+
+<body>
+    <section id='abstract' data-include-format="markdown" data-include="markdown/samenvatting.md"></section>
+    <section id='sotd' data-include-format="markdown" data-include="markdown/status.md"></section>
+    <section data-include-format="markdown" data-include="markdown/colofon.md"></section>
+    <section data-include-format="markdown" data-include="markdown/introductie.md"></section>
+    <section data-include-format="markdown" data-include="markdown/xml-schema.md"></section>
+    <div class="sidelabel">Nationaal Archief - Vastgestelde standaard</div>
+</body>
+
+</html>
