@@ -16,7 +16,7 @@ MDTO bestaat uit een aantal modules die samen het normerende deel vormen:
   https://github.com/NationaalArchief/MDTO-XSD
 
 - **Specificatie Submission Information Package (SIP)** – Een SIP is een verzameling informatieobjecten met bijbehorende representaties en metagegevens voor uitwisseling tussen informatiesystemen.  
-  https://nationaalarchief.github.io/MDTO-SIP/
+  https://nationaalarchief.github.io/MDTO-SIP-specificatie/
 
 - **Definitie van MDTO-conform** – Uitleg wanneer een informatiesysteem aan MDTO voldoet.  
   https://nationaalarchief.github.io/MDTO-Conform/

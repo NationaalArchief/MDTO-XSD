@@ -1,3 +1,5 @@
+# XML-schema
+
 ## mdtoType
 
 **Beschrijving:** Dit type vertegenwoordigt een metadata-object dat óf een `informatieobject` óf een `bestand` kan bevatten.
