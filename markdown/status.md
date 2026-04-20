@@ -1,4 +1,3 @@
-| Datum           | Versie | Auteur            | Vastgesteld in | Wijzigingen        |
-| --------------- | ------ | ----------------- | -------------- | ------------------ |
-| maart 2026      | 1.0    | Nationaal Archief | xx             | Links releasenotes |
-| xx-xx-xxxx 2026 | 1.1    | Nationaal Archief | xx             | Links releasenotes |
+| Versie | Auteur            | Standaardisatieraad                                                                                         | OBDO | Toelichting                                                                                                                                   |
+| :----- | :---------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0    | Nationaal Archief | Geaccordeerd op 7 april 2021 <br>[Bekijk de stukken en het verslag](https://kiacommunity.nl/thoughts/18354) | ---  | <ul><li>[Revisiehistorie](https://github.com/NationaalArchief/MDTO-Metagegevensschema/commits/master)</li><li>Wijzigingen 2021-2026</li></ul> |

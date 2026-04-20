@@ -9,8 +9,6 @@
 | informatieobject   <br> <small>Een op zichzelf staand geheel van gegevens met een eigen identiteit. (bron: DUTO-eisen)</small>                                                               | Ja        | Nee         | informatieobjectType |
 | bestand            <br> <small>Een geordende verzameling van gegevens in elektronische vorm, die door een elektronisch apparaat onder één naam kan worden behandeld en aangesproken.</small> | Ja        | Nee         | bestandType          |
 
----
-
 ## objectType
 
 **Beschrijving:** Basisobjecttype waar `informatieobjectType` later op voortbouwt.  
@@ -19,8 +17,6 @@
 | ---------------------------------------------------------------------------------------------------- | --------- | ----------- | --------------------- |
 | identificatie      <br> <small>Gegevens waarmee het object geïdentificeerd kan worden.</small>       | Ja        | Ja          | identificatieGegevens |
 | naam               <br> <small>Een betekenisvolle aanduiding waaronder het object bekend is.</small> | Ja        | Nee         | xsd:string            |
-
----
 
 ## informatieobjectType
 
