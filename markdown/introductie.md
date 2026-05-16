@@ -5,15 +5,18 @@ Dit gedeelte beschrijft welke documenten de documentatieset bevat en hoe het XML
 ## Inhoud documentatieset
 De documentatieset bestaat uit de volgende links en mappen in een .zip bestand.
 
-- MDTO-XML 1.0.1.xsd: Het XML-schema. (Eerdere versie MDTO-XML 1.0.xsd)
-- MDTO-XML 1.0.1.html: Weergave van het schema als HTML-pagina. Bedoeld voor lezers die geen speciale viewer voor XML-schema’s hebben.  (Eerdere versie MDTO-XML 1.0.html) 
+- [MDTO-XML 1.0.1.xsd](https://github.com/NationaalArchief/MDTO-XSD/tree/main/schema/v1.0.1): Het XML-schema. (Eerdere versie [MDTO-XML 1.0.xsd](https://github.com/NationaalArchief/MDTO-XSD/tree/main/schema/v1.0))
+- [MDTO-XML 1.0.1.html](https://github.com/NationaalArchief/MDTO-XSD/blob/main/downloads/MDTO-XML1.0.1.html): Weergave van het schema als HTML-pagina. Bedoeld voor lezers die geen speciale viewer voor XML-schema’s hebben.  (Eerdere versie MDTO-XML 1.0.html) 
 - MDTO-XML 1.0.1 Voorbeelden: Map met voorbeelden van XML-bestanden conform het XML-schema. 
 
 Aanwijzing voor gebruik:
 
-Sla het .zip bestand op op uw computer
-Pak het .zip bestand uit en sla daarbij het bestand op op uw computer
-Open het bestand met de juiste applicatie vanuit de bestandenmap op uw computer
+- Sla het .zip bestand op op uw computer
+- Pak het .zip bestand uit en sla daarbij het bestand op op uw computer
+- Open het bestand met de juiste applicatie vanuit de bestandenmap op uw computer
+
+> **Documentatieset MDTO-XML**\
+ [Download MDTO-XML 1.0.1 Voorbeelden.zip (6 kB)](https://github.com/NationaalArchief/MDTO-XSD/raw/refs/heads/main/downloads/mdto-xml-voorbeelden-v1.0.1.zip)
 
 
 ## Toelichting op de XML voorbeelden
