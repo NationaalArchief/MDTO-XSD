@@ -1,0 +1,3160 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="nl" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>XML Schema Documentation</title>
+      <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1"/>
+      <style type="text/css">
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* More-configurable styles */
+
+/******** General ********/
+
+/* Document body */
+body {
+   color: Black;
+   background-color: White;
+   font-family: Arial, sans-serif;
+   font-size: 10pt;
+}
+/* Horizontal rules */
+hr {
+   color: black;
+}
+/* Document title */
+h1 {
+   font-size: 18pt;
+   letter-spacing: 2px;
+   border-bottom: 1px #ccc solid;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+/* Main section headers */
+h2 {
+   font-size: 14pt;
+   letter-spacing: 1px;
+}
+/* Sub-section headers */
+h3, h3 a, h3 span {
+   font-size: 12pt;
+   font-weight: bold;
+   color: black;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties th, table.properties th a {
+   color: black;
+   background-color: #F99; /* Pink */
+}
+table.properties td {
+   background-color: #eee; /* Gray */
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   color: #963; /* Orange-brown */
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   border: 2px solid #999;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+   background-color: #ccc;
+}
+table.namespaces td {
+   background-color: #eee;
+}
+/* Target namespace of the schema */
+span.targetNS {
+   color: #06C;
+   font-weight: bold;
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+   color: #F93; /* Orange */
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   border: 2px solid #999; /* Gray */
+}
+
+/* XML Instance Representation table */
+div.sample div.contents {
+   border: 2px dashed black;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent div.contents {
+   border: 2px black solid;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   color: #036; /* Blue */
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Printer-version styles */
+
+@media print {
+
+/* Ensures that controls are hidden when printing */
+div#printerControls {
+   visibility: hidden;
+}
+div#globalControls {
+   visibility: hidden;
+}
+#legend {
+   display: none;
+}
+#legendTOC {
+   display: none;
+}
+#glossary {
+   display: none;
+}
+#glossaryTOC {
+   display: none;
+}
+
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Base styles */
+
+/******** General ********/
+
+/* Unordered lists */
+ul {
+   margin-left: 1.5em;
+   margin-bottom: 0em;
+}
+/* Tables */
+table {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-left: 2px;
+   margin-right: 2px;
+}
+table th, table td {
+   font-size: 10pt;
+   vertical-align: top;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+table th {
+   font-weight: bold;
+   text-align: left;
+}
+/* Table displaying the properties of the schema components or the
+   schema document itself */
+table.properties {
+   width: 90%;
+}
+table.properties th {
+   width: 30%;
+}
+/* Boxes that can make its content appear and disappear*/
+div.box {
+   margin: 1em;
+}
+   /* Box caption */
+div.box span.caption {
+   font-weight: bold;
+}
+   /* Button to open and close the box */
+div.box input.control {
+   width: 1.4em;
+   height: 1.4em;
+   text-align: center;
+   vertical-align: middle;
+   font-size: 11pt;
+}
+   /* Box contents */
+div.box div.contents {
+   margin-top: 3px;
+}
+
+
+/******** Table of Contents Section ********/
+
+/* Controls for switching between printing and viewing modes */
+div#printerControls {
+   white-space: nowrap;
+   font-weight: bold;
+   padding: 5px;
+   margin: 5px;
+}
+/* Controls that can collapse or expand all XML Instance
+   Representation and Schema Component Representation boxes */
+div#globalControls {
+   padding: 10px;
+   margin: 5px;
+}
+
+
+/******** Schema Document Properties Section ********/
+
+/* Table displaying the namespaces declared in the schema */
+table.namespaces th {
+}
+table.namespaces td {
+}
+/* Target namespace of the schema */
+span.targetNS {
+}
+
+
+/******** Schema Components' Sections ********/
+
+/* Name of schema component */
+.name {
+}
+
+/* Hierarchy table */
+table.hierarchy {
+   width: 90%;
+}
+table.hierarchy th {
+   font-weight: normal;
+   font-style: italic;
+   width: 20%;
+}
+table.hierarchy th, table.hierarchy td {
+   padding: 5px;
+}
+
+/* XML Instance Representation table */
+div.sample {
+   width: 90%;
+}
+div.sample div.contents {
+   padding: 5px;
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+}
+   /* Normal elements and attributes */
+div.sample div.contents, div.sample div.contents a {
+   color: black;
+}
+   /* Group Headers */
+div.sample div.contents .group, div.sample div.contents .group a {
+   color: #999; /* Light gray */
+}
+   /* Type Information */
+div.sample div.contents .type, div.sample div.contents .type a {
+   color: #999; /* Light gray */
+}
+   /* Occurrence Information */
+div.sample div.contents .occurs, div.sample div.contents .occurs a {
+   color: #999; /* Light gray */
+}
+   /* Fixed values */
+div.sample div.contents .fixed {
+   color: #063; /* Green */
+   font-weight: bold;
+}
+   /* Simple type constraints */
+div.sample div.contents .constraint, div.sample div.contents .constraint a {
+   color: #999; /* Light gray */
+}
+   /* Elements and attributes inherited from base type */
+div.sample div.contents .inherited, div.sample div.contents .inherited a {
+   color: #666; /* Dark gray */
+}
+   /* Elements and attributes added to or changed from base type */
+div.sample div.contents .newFields {
+   font-weight: bold;
+}
+   /* Other type of information */
+div.sample div.contents .other, div.sample div.contents .other a {
+   color: #369; /* Blue */
+   font-style: italic;
+}
+   /* Link to open up window displaying documentation */
+div.sample div.contents a.documentation {
+   text-decoration: none;
+   padding-left: 3px;
+   padding-right: 3px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   font-weight: bold;
+   font-size: 11pt;
+   background-color: #FFD;
+   color: #069;
+}
+   /* Invert colors when hovering over link to open up window 
+      displaying documentation */
+div.sample div.contents a.documentation:hover {
+   color: #FFD;
+   background-color: #069;
+}
+
+/* Schema Component Representation table */
+div.schemaComponent {
+   width: 90%;
+}
+div.schemaComponent div.contents {
+   font-family: Courier New, sans-serif;
+   font-size: 10pt;
+   padding: 5px;
+}
+   /* Syntax characters */
+div.schemaComponent div.contents {
+   color: #00f; /* blue */
+}
+   /* Element and attribute tags */
+div.schemaComponent div.contents .scTag {
+   color: #933; /* maroon */
+}
+   /* Element and attribute content */
+div.schemaComponent div.contents .scContent, div.schemaComponent div.contents .scContent a {
+   color: black;
+   font-weight: bold;
+}
+   /* Comments */
+div.schemaComponent div.contents .comment {
+   color: #999; /* Light gray */
+}
+
+/******** Legend Section ********/
+
+div#legend table, div#legend div {
+   margin-bottom: 3px;
+}
+div#legend div.hint {
+   color: #999; /* Light gray */
+   width: 90%;
+   margin-left: 1em;
+   margin-bottom: 2em;
+}
+
+
+/******** Glossary Section ********/
+
+/* Glossary Terms */
+.glossaryTerm {
+   font-weight: bold;
+}
+
+
+/******** Footer ********/
+
+.footer {
+   font-size: 8pt;
+}
+</style>
+      <script type="text/javascript">
+<!--
+/* IDs of XML Instance Representation boxes */
+var xiBoxes = new Array('element_MDTO_xibox', 'type_mdtoType_xibox', 'type_objectType_xibox', 'type_informatieobjectType_xibox', 'type_bestandType_xibox', 'type_identificatieGegevens_xibox', 'type_verwijzingGegevens_xibox', 'type_begripGegevens_xibox', 'type_dekkingInTijdGegevens_xibox', 'type_eventGegevens_xibox', 'type_gerelateerdInformatieobjectGegevens_xibox', 'type_betrokkeneGegevens_xibox', 'type_beperkingGebruikGegevens_xibox', 'type_termijnGegevens_xibox', 'type_checksumGegevens_xibox', 'type_raadpleeglocatieGegevens_xibox');
+/* IDs of Schema Component Representation boxes */
+var scBoxes = new Array('schema_scbox', 'element_MDTO_scbox', 'type_mdtoType_scbox', 'type_objectType_scbox', 'type_informatieobjectType_scbox', 'type_bestandType_scbox', 'type_identificatieGegevens_scbox', 'type_verwijzingGegevens_scbox', 'type_begripGegevens_scbox', 'type_dekkingInTijdGegevens_scbox', 'type_eventGegevens_scbox', 'type_gerelateerdInformatieobjectGegevens_scbox', 'type_betrokkeneGegevens_scbox', 'type_beperkingGebruikGegevens_scbox', 'type_termijnGegevens_scbox', 'type_checksumGegevens_scbox', 'type_raadpleeglocatieGegevens_scbox');
+
+/**
+ * Can get the ID of the button controlling
+ * a collapseable box by concatenating
+ * this string onto the ID of the box itself.
+ */
+var B_SFIX = "_button";
+
+/**
+ * Counter of documentation windows
+ * Used to give each window a unique name
+ */
+var windowCount = 0;
+
+/**
+ * Returns an element in the current HTML document.
+ * 
+ * @param elementID Identifier of HTML element
+ * @return               HTML element object
+ */
+function getElementObject(elementID) {
+    var elemObj = null;
+    if (document.getElementById) {
+        elemObj = document.getElementById(elementID);
+    }
+    return elemObj;
+}             
+
+/**
+ * Closes a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function closeBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="none";
+
+     // Change text of button 
+     if (boxObj.style.display=="none") {
+        buttonObj.value=" + ";
+     }
+  }
+}
+
+/**
+ * Opens a collapseable box.
+ * 
+ * @param boxObj       Collapseable box
+ * @param buttonObj Button controlling box
+ */
+function openBox(boxObj, buttonObj) {
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else {
+     // Change 'display' CSS property of box
+     boxObj.style.display="block";
+
+     // Change text of button
+     if (boxObj.style.display=="block") {
+        buttonObj.value=" - ";
+     }
+  }
+}
+
+/**
+ * Sets the state of a collapseable box.
+ * 
+ * @param boxID Identifier of box
+ * @param open If true, box is "opened",
+ *             Otherwise, box is "closed".
+ */
+function setState(boxID, open) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (open) {
+     openBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  } else {
+     closeBox(boxObj, buttonObj);
+     // Make button visible
+     buttonObj.style.display="inline";
+  }
+}
+
+/**
+ * Switches the state of a collapseable box, e.g.
+ * if it's opened, it'll be closed, and vice versa.
+ * 
+ * @param boxID Identifier of box
+ */
+function switchState(boxID) {
+  var boxObj = getElementObject(boxID);
+  var buttonObj = getElementObject(boxID+B_SFIX);
+  if (boxObj == null || buttonObj == null) {
+     // Box or button not found
+  } else if (boxObj.style.display=="none") {
+     // Box is closed, so open it
+     openBox(boxObj, buttonObj);
+  } else if (boxObj.style.display=="block") {
+     // Box is opened, so close it
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Closes all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function collapseAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     closeBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Open all boxes in a given list.
+ * 
+ * @param boxList Array of box IDs
+ */
+function expandAll(boxList) {
+  var idx;
+  for (idx = 0; idx < boxList.length; idx++) {
+     var boxObj = getElementObject(boxList[idx]);
+     var buttonObj = getElementObject(boxList[idx]+B_SFIX);
+     openBox(boxObj, buttonObj);
+  }
+}
+
+/**
+ * Makes all the control buttons of boxes appear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function viewControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "inline";
+        }
+    }
+}
+
+/**
+ * Makes all the control buttons of boxes disappear.
+ * 
+ * @param boxList Array of box IDs
+ */
+function hideControlButtons(boxList) {
+    var idx;
+    for (idx = 0; idx < boxList.length; idx++) {
+        buttonObj = getElementObject(boxList[idx]+B_SFIX);
+        if (buttonObj != null) {
+            buttonObj.style.display = "none";
+        }
+    }
+}
+
+/**
+ * Sets the page for either printing mode
+ * or viewing mode. In printing mode, the page
+ * is made to be more readable when printing it out.
+ * In viewing mode, the page is more browsable.
+ *
+ * @param isPrinterVersion If true, display in
+ *                                 printing mode; otherwise, 
+ *                                 in viewing mode
+ */
+function displayMode(isPrinterVersion) {
+    var obj;
+    if (isPrinterVersion) {
+        // Hide global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "hidden";
+        }
+        // Hide Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        // Hide Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "none";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Expand all Schema Component Representation tables
+        expandAll(scBoxes);
+
+        // Hide Control buttons
+        hideControlButtons(xiBoxes);
+        hideControlButtons(scBoxes);
+    } else {
+        // View global control buttons
+        obj = getElementObject("globalControls");
+        if (obj != null) {
+            obj.style.visibility = "visible";
+        }
+        // View Legend
+        obj = getElementObject("legend");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("legendTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        // View Glossary
+        obj = getElementObject("glossary");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+        obj = getElementObject("glossaryTOC");
+        if (obj != null) {
+            obj.style.display = "block";
+        }
+
+        // Expand all XML Instance Representation tables
+        expandAll(xiBoxes);
+        // Collapse all Schema Component Representation tables
+        collapseAll(scBoxes);
+
+        // View Control buttons
+        viewControlButtons(xiBoxes);
+        viewControlButtons(scBoxes);
+    }
+}
+
+/**
+ * Opens up a window displaying the documentation
+ * of a schema component in the XML Instance
+ * Representation table.
+ * 
+ * @param compDesc      Description of schema component 
+ * @param compName      Name of schema component 
+ * @param docTextArray Array containing the paragraphs 
+ *                           of the new document
+ */
+function viewDocumentation(compDesc, compName, docTextArray) {
+  var width = 400;
+  var height = 200;
+  var locX = 100;
+  var locY = 200;
+
+  /* Generate content */
+  var actualText = "<html>";
+  actualText += "<head><title>";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": " + compName;
+  }
+  actualText += "</title></head>";
+  actualText += "<body bgcolor=\"#FFFFEE\">";
+  // Title
+  actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; letter-spacing:1px;\">";
+  actualText += compDesc;
+  if (compName != '') {
+     actualText += ": <span style=\"color:#006699\">" + compName + "</span>";
+  }
+  actualText += "</p>";
+  // Documentation
+  var idx;
+  for (idx = 0; idx < docTextArray.length; idx++) {
+     actualText += "<p style=\"font-family: Arial, sans-serif; font-size: 10pt;\">" + docTextArray[idx] + "</p>";
+  }
+  // Link to close window
+  actualText += "<a href=\"javascript:void(0)\" onclick=\"window.close();\" style=\"font-family: Arial, sans-serif; font-size: 8pt;\">Close</a>";
+  actualText += "</body></html>";
+
+  /* Display window */
+  windowCount++;
+  var docWindow = window.open("", "documentation"+windowCount, "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable,alwaysRaised,dependent,titlebar=no,width="+width+",height="+height+",screenX="+locX+",left="+locX+",screenY="+locY+",top="+locY);
+  docWindow.document.write(actualText);
+}
+
+// -->
+</script>
+   </head>
+   <body>
+      <h1>
+         <a name="top">XML Schema Documentation</a>
+      </h1>
+      <div style="float: right;">
+         <div id="printerControls" style="display:none;">
+            <label><input type="checkbox" onclick="displayMode(this.checked)"/>Printer-friendly Version</label></div>
+         <script type="text/javascript">
+<!--
+
+var pc = getElementObject("printerControls");
+if (pc != null) {
+   pc.style.display="block";
+}
+               
+// -->
+</script>
+         <div id="globalControls" style="display:none">
+            <strong>XML Instance Representation:</strong>
+            <br/>
+            <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(xiBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(xiBoxes)">Collapse All</a> ]</span>
+            <br/>
+            <br/>
+            <strong>Schema Component Representation:</strong>
+            <br/>
+            <span style="margin-left: 1em; white-space: nowrap">[ <a href="javascript:void(0)" onclick="expandAll(scBoxes)">Expand All</a> | <a href="javascript:void(0)" onclick="collapseAll(scBoxes)">Collapse All</a> ]</span>
+         </div>
+         <script type="text/javascript">
+<!--
+
+var gc = getElementObject("globalControls");
+if (gc != null) {
+   gc.style.display="block";
+}
+               
+// -->
+</script>
+      </div>
+      <h2>Table of Contents</h2>
+      <ul>
+         <li>
+            <a href="#SchemaProperties">Schema Document Properties</a>
+         </li>
+         <li>
+            <a href="#SchemaDeclarations">Global Declarations</a>
+            <ul>
+               <li>
+                  <a href="#element_MDTO">Element: <strong>MDTO</strong>
+                  </a>
+               </li>
+            </ul>
+         </li>
+         <li>
+            <a href="#SchemaDefinitions">Global Definitions</a>
+            <ul>
+               <li>
+                  <a href="#type_begripGegevens">Complex Type: <strong>begripGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_beperkingGebruikGegevens">Complex Type: <strong>beperkingGebruikGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_bestandType">Complex Type: <strong>bestandType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_betrokkeneGegevens">Complex Type: <strong>betrokkeneGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_checksumGegevens">Complex Type: <strong>checksumGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_dekkingInTijdGegevens">Complex Type: <strong>dekkingInTijdGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_eventGegevens">Complex Type: <strong>eventGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_gerelateerdInformatieobjectGegevens">Complex Type: <strong>gerelateerdInformatieobjectGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_identificatieGegevens">Complex Type: <strong>identificatieGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_informatieobjectType">Complex Type: <strong>informatieobjectType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_mdtoType">Complex Type: <strong>mdtoType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_objectType">Complex Type: <strong>objectType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_raadpleeglocatieGegevens">Complex Type: <strong>raadpleeglocatieGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_termijnGegevens">Complex Type: <strong>termijnGegevens</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_verwijzingGegevens">Complex Type: <strong>verwijzingGegevens</strong>
+                  </a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+      <ul id="legendTOC" style="margin-top: 0em">
+         <li>
+            <a href="#Legend">Legend</a>
+         </li>
+      </ul>
+      <ul id="glossaryTOC" style="margin-top: 0em">
+         <li>
+            <a href="#Glossary">Glossary</a>
+         </li>
+      </ul>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h2>
+         <a name="SchemaProperties">Schema Document Properties</a>
+      </h2>
+      <table class="properties">
+         <tr>
+            <th>
+               <a title="Look up 'Target Namespace' in glossary" href="#term_TargetNS">Target Namespace</a>
+            </th>
+            <td>
+               <span class="targetNS">https://www.nationaalarchief.nl/mdto</span>
+            </td>
+         </tr>
+         <tr>
+            <th>Version</th>
+            <td>v1.0.1</td>
+         </tr>
+         <tr>
+            <th>Element and Attribute Namespaces</th>
+            <td>
+               <ul>
+                  <li>Global element and attribute declarations belong to this schema's target namespace.</li>
+                  <li>By default, local element declarations belong to this schema's target namespace.</li>
+                  <li>By default, local attribute declarations have no namespace.</li>
+               </ul>
+            </td>
+         </tr>
+      </table>
+      <h3>Declared Namespaces</h3>
+      <table class="namespaces">
+         <tr>
+            <th>Prefix</th>
+            <th>Namespace</th>
+         </tr>
+         <tr>
+            <td>
+               <a name="ns_">Default namespace</a>
+            </td>
+            <td>
+               <span class="targetNS">https://www.nationaalarchief.nl/mdto</span>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <a name="ns_xsd">xsd</a>
+            </td>
+            <td>http://www.w3.org/2001/XMLSchema</td>
+         </tr>
+         <tr>
+            <td>
+               <a name="ns_xml">xml</a>
+            </td>
+            <td>http://www.w3.org/XML/1998/namespace</td>
+         </tr>
+      </table>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="schema_scbox_button"
+                   class="control"
+                   onclick="switchState('schema_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="schema_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:schema</span> 
+               <span class="scTag">targetNamespace</span>="<span class="scContent">https://www.nationaalarchief.nl/mdto</span>" <span class="scTag">elementFormDefault</span>="<span class="scContent">qualified</span>" <span class="scTag">attributeFormDefault</span>="<span class="scContent">unqualified</span>" <span class="scTag">version</span>="<span class="scContent">v1.0.1</span>"&gt;<div class="scContent" style="margin-left: 1.5em">...</div>&lt;/<span class="scTag">xsd:schema</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('schema_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h2>
+         <a name="SchemaDeclarations">Global Declarations</a>
+      </h2>
+      <h3>Element: <a name="element_MDTO" class="name">MDTO</a>
+      </h3>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>MDTO</td>
+         </tr>
+         <tr>
+            <th>Type</th>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;mdtoType&#34; type definition." href="#type_mdtoType">mdtoType</a>
+               </span>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Nillable' in glossary" href="#term_Nillable">Nillable</a>
+            </th>
+            <td>no</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="element_MDTO_xibox_button"
+                   class="control"
+                   onclick="switchState('element_MDTO_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="element_MDTO_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;MDTO&gt; <br/>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
+                  <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em">&lt;informatieobject&gt; <span class="type">
+                     <a title="Jump to &#34;informatieobjectType&#34; type definition."
+                        href="#type_informatieobjectType">informatieobjectType</a>
+                  </span> &lt;/informatieobject&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een op zichzelf staand geheel van gegevens met een eigen identiteit. (bron: DUTO-eisen)'); viewDocumentation('Element', 'informatieobject', docArray);">?</a>
+               </div>
+               <div style="margin-left: 3em">&lt;bestand&gt; <span class="type">
+                     <a title="Jump to &#34;bestandType&#34; type definition." href="#type_bestandType">bestandType</a>
+                  </span> &lt;/bestand&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een geordende verzameling van gegevens in elektronische vorm, die door een elektronisch apparaat onder één naam kan worden behandeld en aangesproken.'); viewDocumentation('Element', 'bestand', docArray);">?</a>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Choice</span>
+               <br/>&lt;/MDTO&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('element_MDTO_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="element_MDTO_scbox_button"
+                   class="control"
+                   onclick="switchState('element_MDTO_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="element_MDTO_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:element</span> 
+               <span class="scTag">name</span>="<span class="scContent">MDTO</span>" <span class="scTag">type</span>="<span class="scContent">
+                  <span class="type">
+                     <a title="Jump to &#34;mdtoType&#34; type definition." href="#type_mdtoType">mdtoType</a>
+                  </span>
+               </span>"/&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('element_MDTO_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h2>
+         <a name="SchemaDefinitions">Global Definitions</a>
+      </h2>
+      <h3>Complex Type: <a name="type_begripGegevens" class="name">begripGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>begripGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_begripGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_begripGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_begripGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;begripLabel&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/begripLabel&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De tekstweergave van het begrip dat is toegekend in de begrippenlijst.'); viewDocumentation('Element', 'begripLabel', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;begripCode&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/begripCode&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De code die aan het begrip is toegekend in de begrippenlijst.'); viewDocumentation('Element', 'begripCode', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;begripBegrippenlijst&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/begripBegrippenlijst&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een beschrijving van de begrippen die voor een bepaald toepassingsgebied gebruikt worden is opgesomd. Samen met hun betekenis en hun onderlinge relaties.'); viewDocumentation('Element', 'begripBegrippenlijst', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_begripGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_begripGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_begripGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_begripGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">begripGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">begripLabel</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">begripCode</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">begripBegrippenlijst</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_begripGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_beperkingGebruikGegevens" class="name">beperkingGebruikGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>beperkingGebruikGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_beperkingGebruikGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_beperkingGebruikGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_beperkingGebruikGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;beperkingGebruikType&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/beperkingGebruikType&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Typering van de beperking. Op grond waarvan bepaald kan worden wie toegang heeft tot het informatieobject en welke voorwaarden op het gebruik van toepassing zijn.'); viewDocumentation('Element', 'beperkingGebruikType', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;beperkingGebruikNadereBeschrijving&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/beperkingGebruikNadereBeschrijving&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Nadere beschrijving van de beperking op het gebruik. Als aanvulling op beperkingGebruikType.'); viewDocumentation('Element', 'beperkingGebruikNadereBeschrijving', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;beperkingGebruikDocumentatie&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/beperkingGebruikDocumentatie&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Verwijzing naar een tekstdocument waarin een nadere beschrijving van de beperking is opgenomen.'); viewDocumentation('Element', 'beperkingGebruikDocumentatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;beperkingGebruikTermijn&gt; <span class="type">
+                     <a title="Jump to &#34;termijnGegevens&#34; type definition."
+                        href="#type_termijnGegevens">termijnGegevens</a>
+                  </span> &lt;/beperkingGebruikTermijn&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De termijn waarbinnen de beperking op het gebruik van toepassing is.'); viewDocumentation('Element', 'beperkingGebruikTermijn', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_beperkingGebruikGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_beperkingGebruikGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_beperkingGebruikGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_beperkingGebruikGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">beperkingGebruikGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">beperkingGebruikType</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">beperkingGebruikNadereBeschrijving</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">beperkingGebruikDocumentatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">beperkingGebruikTermijn</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;termijnGegevens&#34; type definition."
+                              href="#type_termijnGegevens">termijnGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_beperkingGebruikGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_bestandType" class="name">bestandType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;objectType&#34; type definition." href="#type_objectType">objectType</a>
+               </span> &lt; <strong>bestandType</strong> (by extension)</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>bestandType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_bestandType_xibox_button"
+                   class="control"
+                   onclick="switchState('type_bestandType_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_bestandType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;identificatie&gt; <span class="type">
+                     <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                        href="#type_identificatieGegevens">identificatieGegevens</a>
+                  </span> &lt;/identificatie&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gegevens waarmee het object geïdentificeerd kan worden.'); viewDocumentation('Element', 'identificatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;naam&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/naam&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een betekenisvolle aanduiding waaronder het object bekend is.'); viewDocumentation('Element', 'naam', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;omvang&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:integer</span> &lt;/omvang&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Aantal bytes in het bestand.'); viewDocumentation('Element', 'omvang', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;bestandsformaat&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/bestandsformaat&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De manier waarop de informatie in een computerbestand binair gecodeerd is.'); viewDocumentation('Element', 'bestandsformaat', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;checksum&gt; <span class="type">
+                     <a title="Jump to &#34;checksumGegevens&#34; type definition."
+                        href="#type_checksumGegevens">checksumGegevens</a>
+                  </span> &lt;/checksum&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gegevens om te bepalen of het bestand beschadigd of gewijzigd is.'); viewDocumentation('Element', 'checksum', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;URLBestand&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:anyURI</span> &lt;/URLBestand&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Actuele verwijzing naar het bestand.'); viewDocumentation('Element', 'URLBestand', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;isRepresentatieVan&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/isRepresentatieVan&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Verwijzing naar het informatieobject waarvan het bestand een (deel van een) representatie is.'); viewDocumentation('Element', 'isRepresentatieVan', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_bestandType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_bestandType_scbox_button"
+                   class="control"
+                   onclick="switchState('type_bestandType_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_bestandType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">bestandType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;objectType&#34; type definition." href="#type_objectType">objectType</a>
+                        </span>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">omvang</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:integer</span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">bestandsformaat</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;begripGegevens&#34; type definition."
+                                    href="#type_begripGegevens">begripGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">checksum</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;checksumGegevens&#34; type definition."
+                                    href="#type_checksumGegevens">checksumGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">URLBestand</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:anyURI</span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">isRepresentatieVan</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_bestandType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_betrokkeneGegevens" class="name">betrokkeneGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>betrokkeneGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_betrokkeneGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_betrokkeneGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_betrokkeneGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;betrokkeneTypeRelatie&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/betrokkeneTypeRelatie&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Typering van de betrokkenheid van de actor bij het informatieobject.'); viewDocumentation('Element', 'betrokkeneTypeRelatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;betrokkeneActor&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/betrokkeneActor&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De persoon of organisatie die betrokken is bij het informatieobject.'); viewDocumentation('Element', 'betrokkeneActor', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_betrokkeneGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_betrokkeneGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_betrokkeneGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_betrokkeneGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">betrokkeneGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">betrokkeneTypeRelatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">betrokkeneActor</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_betrokkeneGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_checksumGegevens" class="name">checksumGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>checksumGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_checksumGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_checksumGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_checksumGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;checksumAlgoritme&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/checksumAlgoritme&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Naam van het checksum algoritme dat is gebruikt om de checksum te maken.'); viewDocumentation('Element', 'checksumAlgoritme', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;checksumWaarde&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/checksumWaarde&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De waarde van de checksum.'); viewDocumentation('Element', 'checksumWaarde', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;checksumDatum&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:dateTime</span> &lt;/checksumDatum&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Datum waarop de checksum is gemaakt.'); viewDocumentation('Element', 'checksumDatum', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_checksumGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_checksumGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_checksumGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_checksumGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">checksumGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">checksumAlgoritme</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">checksumWaarde</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">checksumDatum</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:dateTime</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_checksumGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_dekkingInTijdGegevens" class="name">dekkingInTijdGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>dekkingInTijdGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_dekkingInTijdGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_dekkingInTijdGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_dekkingInTijdGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;dekkingInTijdType&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/dekkingInTijdType&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Nadere typering van het tijdstip of de periode waar de inhoud van het informatieobject betrekking op heeft.'); viewDocumentation('Element', 'dekkingInTijdType', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;dekkingInTijdBegindatum&gt; <span class="constraint">union of: [ <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date ]</span> &lt;/dekkingInTijdBegindatum&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Datum waar de inhoud van het informatieobject betrekking op heeft. Bij een periode is dit de begindatum.'); viewDocumentation('Element', 'dekkingInTijdBegindatum', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;dekkingInTijdEinddatum&gt; <span class="constraint">union of: [ <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date ]</span> &lt;/dekkingInTijdEinddatum&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Einddatum van de periode waar de inhoud van het informatieobject betrekking op heeft.'); viewDocumentation('Element', 'dekkingInTijdEinddatum', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_dekkingInTijdGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_dekkingInTijdGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_dekkingInTijdGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_dekkingInTijdGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">dekkingInTijdGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">dekkingInTijdType</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">dekkingInTijdBegindatum</span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:union</span> 
+                           <span class="scTag">memberTypes</span>="<span class="scContent">
+                              <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span>"/&gt;</div>&lt;/<span class="scTag">xsd:simpleType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">dekkingInTijdEinddatum</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:union</span> 
+                           <span class="scTag">memberTypes</span>="<span class="scContent">
+                              <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span>"/&gt;</div>&lt;/<span class="scTag">xsd:simpleType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_dekkingInTijdGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_eventGegevens" class="name">eventGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>eventGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_eventGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_eventGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_eventGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;eventType&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/eventType&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Aanduiding van het type event.'); viewDocumentation('Element', 'eventType', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;eventTijd&gt; <span class="constraint">union of: [ <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:dateTime ]</span> &lt;/eventTijd&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Het tijdstip waarop het event heeft plaatsgevonden.'); viewDocumentation('Element', 'eventTijd', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;eventVerantwoordelijkeActor&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/eventVerantwoordelijkeActor&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De actor die verantwoordelijk was voor de gebeurtenis.'); viewDocumentation('Element', 'eventVerantwoordelijkeActor', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;eventResultaat&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/eventResultaat&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Beschrijving van het resultaat van het event voor zover relevant voor de duurzame toegankelijkheid van het informatieobject.'); viewDocumentation('Element', 'eventResultaat', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_eventGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_eventGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_eventGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_eventGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">eventGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">eventType</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">eventTijd</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:union</span> 
+                           <span class="scTag">memberTypes</span>="<span class="scContent">
+                              <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:dateTime</span>"/&gt;</div>&lt;/<span class="scTag">xsd:simpleType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">eventVerantwoordelijkeActor</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">eventResultaat</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_eventGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_gerelateerdInformatieobjectGegevens" class="name">gerelateerdInformatieobjectGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>gerelateerdInformatieobjectGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_gerelateerdInformatieobjectGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_gerelateerdInformatieobjectGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_gerelateerdInformatieobjectGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;gerelateerdInformatieobjectVerwijzing&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/gerelateerdInformatieobjectVerwijzing&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Verwijzing naar het gerelateerde informatieobject.'); viewDocumentation('Element', 'gerelateerdInformatieobjectVerwijzing', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;gerelateerdInformatieobjectTypeRelatie&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/gerelateerdInformatieobjectTypeRelatie&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Typering van de relatie met het andere informatieobject.'); viewDocumentation('Element', 'gerelateerdInformatieobjectTypeRelatie', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_gerelateerdInformatieobjectGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_gerelateerdInformatieobjectGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_gerelateerdInformatieobjectGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_gerelateerdInformatieobjectGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">gerelateerdInformatieobjectGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">gerelateerdInformatieobjectVerwijzing</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">gerelateerdInformatieobjectTypeRelatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_gerelateerdInformatieobjectGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_identificatieGegevens" class="name">identificatieGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>identificatieGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_identificatieGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_identificatieGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_identificatieGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;identificatieKenmerk&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/identificatieKenmerk&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een kenmerk waarmee een object geïdentificeerd kan worden.'); viewDocumentation('Element', 'identificatieKenmerk', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;identificatieBron&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/identificatieBron&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Herkomst van het kenmerk.'); viewDocumentation('Element', 'identificatieBron', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_identificatieGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_identificatieGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_identificatieGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_identificatieGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">identificatieGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">identificatieKenmerk</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">identificatieBron</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_identificatieGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_informatieobjectType" class="name">informatieobjectType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>
+               <span class="type">
+                  <a title="Jump to &#34;objectType&#34; type definition." href="#type_objectType">objectType</a>
+               </span> &lt; <strong>informatieobjectType</strong> (by extension)</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>informatieobjectType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_informatieobjectType_xibox_button"
+                   class="control"
+                   onclick="switchState('type_informatieobjectType_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_informatieobjectType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em" class="inherited">&lt;identificatie&gt; <span class="type">
+                     <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                        href="#type_identificatieGegevens">identificatieGegevens</a>
+                  </span> &lt;/identificatie&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gegevens waarmee het object geïdentificeerd kan worden.'); viewDocumentation('Element', 'identificatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="inherited">&lt;naam&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/naam&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een betekenisvolle aanduiding waaronder het object bekend is.'); viewDocumentation('Element', 'naam', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;aggregatieniveau&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/aggregatieniveau&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Het aggregatieniveau van het informatieobject.'); viewDocumentation('Element', 'aggregatieniveau', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;classificatie&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/classificatie&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Ordening van informatieobjecten in een logisch verband, zoals vastgelegd in een classificatieschema.'); viewDocumentation('Element', 'classificatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;trefwoord&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/trefwoord&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Trefwoord dat aan het informatieobject is toegekend.'); viewDocumentation('Element', 'trefwoord', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;omschrijving&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/omschrijving&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Omschrijving van de inhoud van het informatieobject.'); viewDocumentation('Element', 'omschrijving', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;raadpleeglocatie&gt; <span class="type">
+                     <a title="Jump to &#34;raadpleeglocatieGegevens&#34; type definition."
+                        href="#type_raadpleeglocatieGegevens">raadpleeglocatieGegevens</a>
+                  </span> &lt;/raadpleeglocatie&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Actuele verwijzing naar de locatie waar het informatieobject ter inzage ligt.'); viewDocumentation('Element', 'raadpleeglocatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;dekkingInTijd&gt; <span class="type">
+                     <a title="Jump to &#34;dekkingInTijdGegevens&#34; type definition."
+                        href="#type_dekkingInTijdGegevens">dekkingInTijdGegevens</a>
+                  </span> &lt;/dekkingInTijd&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een tijdstip of de periode waarop de inhoud van het informatieobject betrekking heeft.'); viewDocumentation('Element', 'dekkingInTijd', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;dekkingInRuimte&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/dekkingInRuimte&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Plaats of locatie waar de inhoud van het informatieobject betrekking op heeft.'); viewDocumentation('Element', 'dekkingInRuimte', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;taal&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:language</span> &lt;/taal&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De taal waarin het informatieobject gesteld is.'); viewDocumentation('Element', 'taal', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;event&gt; <span class="type">
+                     <a title="Jump to &#34;eventGegevens&#34; type definition."
+                        href="#type_eventGegevens">eventGegevens</a>
+                  </span> &lt;/event&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gebeurtenis die heeft plaatsgevonden met betrekking tot het ontstaan, wijzigen, vernietigen en beheer van het informatieobject en de bijbehorende metagegevens.'); viewDocumentation('Element', 'event', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;waardering&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/waardering&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De waardering van het informatieobject volgens de van toepassing zijnde en vastgestelde selectielijst.'); viewDocumentation('Element', 'waardering', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;bewaartermijn&gt; <span class="type">
+                     <a title="Jump to &#34;termijnGegevens&#34; type definition."
+                        href="#type_termijnGegevens">termijnGegevens</a>
+                  </span> &lt;/bewaartermijn&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Termijn waarin het informatieobject bewaard dient te worden, zoals gespecificeerd in de van toepassing zijnde en vastgestelde selectielijst.'); viewDocumentation('Element', 'bewaartermijn', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;informatiecategorie&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/informatiecategorie&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De informatiecategorie uit een vastgestelde selectielijst of hotspotlijst waar de bewaartermijn op gebaseerd is.'); viewDocumentation('Element', 'informatiecategorie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;isOnderdeelVan&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/isOnderdeelVan&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De direct bovenliggende aggregatie waar dit informatieobject onderdeel van is.'); viewDocumentation('Element', 'isOnderdeelVan', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;bevatOnderdeel&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/bevatOnderdeel&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een Informatieobject dat direct onderliggend onderdeel is van deze aggregatie. Opmerking: Dit is de omgekeerde relatie van isOnderdeelVan.'); viewDocumentation('Element', 'bevatOnderdeel', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;heeftRepresentatie&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/heeftRepresentatie&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Verwijzing naar het bestand dat een (deel van een) representatie van het informatieobject is.'); viewDocumentation('Element', 'heeftRepresentatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;aanvullendeMetagegevens&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/aanvullendeMetagegevens&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Verwijzing naar een bestand dat aanvullende (domeinspecifieke) metagegevens over het informatieobject bevat.'); viewDocumentation('Element', 'aanvullendeMetagegevens', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;gerelateerdInformatieobject&gt; <span class="type">
+                     <a title="Jump to &#34;gerelateerdInformatieobjectGegevens&#34; type definition."
+                        href="#type_gerelateerdInformatieobjectGegevens">gerelateerdInformatieobjectGegevens</a>
+                  </span> &lt;/gerelateerdInformatieobject&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Relatie met een ander informatieobject dat relevant is binnen de context van het ontstaan, gebruik en/of beheer van dit informatieobject.'); viewDocumentation('Element', 'gerelateerdInformatieobject', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;archiefvormer&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/archiefvormer&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De organisatie die verantwoordelijk is voor het opmaken en/of ontvangen van het informatieobject.'); viewDocumentation('Element', 'archiefvormer', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;betrokkene&gt; <span class="type">
+                     <a title="Jump to &#34;betrokkeneGegevens&#34; type definition."
+                        href="#type_betrokkeneGegevens">betrokkeneGegevens</a>
+                  </span> &lt;/betrokkene&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Persoon of organisatie die relevant is binnen de context van het ontstaan en gebruik van dit informatieobject.'); viewDocumentation('Element', 'betrokkene', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;activiteit&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/activiteit&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De bedrijfsactiviteit waarbij het informatieobject door de archiefvormer is ontvangen of gemaakt.'); viewDocumentation('Element', 'activiteit', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em" class="newFields">&lt;beperkingGebruik&gt; <span class="type">
+                     <a title="Jump to &#34;beperkingGebruikGegevens&#34; type definition."
+                        href="#type_beperkingGebruikGegevens">beperkingGebruikGegevens</a>
+                  </span> &lt;/beperkingGebruik&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een beperking die gesteld is aan het gebruik van het informatieobject.'); viewDocumentation('Element', 'beperkingGebruik', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_informatieobjectType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_informatieobjectType_scbox_button"
+                   class="control"
+                   onclick="switchState('type_informatieobjectType_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_informatieobjectType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">informatieobjectType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:extension</span> 
+                     <span class="scTag">base</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;objectType&#34; type definition." href="#type_objectType">objectType</a>
+                        </span>
+                     </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">aggregatieniveau</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;begripGegevens&#34; type definition."
+                                    href="#type_begripGegevens">begripGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">classificatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;begripGegevens&#34; type definition."
+                                    href="#type_begripGegevens">begripGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">trefwoord</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">omschrijving</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">raadpleeglocatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;raadpleeglocatieGegevens&#34; type definition."
+                                    href="#type_raadpleeglocatieGegevens">raadpleeglocatieGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">dekkingInTijd</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;dekkingInTijdGegevens&#34; type definition."
+                                    href="#type_dekkingInTijdGegevens">dekkingInTijdGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">dekkingInRuimte</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">taal</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:language</span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">event</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;eventGegevens&#34; type definition."
+                                    href="#type_eventGegevens">eventGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">waardering</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;begripGegevens&#34; type definition."
+                                    href="#type_begripGegevens">begripGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">bewaartermijn</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;termijnGegevens&#34; type definition."
+                                    href="#type_termijnGegevens">termijnGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">informatiecategorie</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;begripGegevens&#34; type definition."
+                                    href="#type_begripGegevens">begripGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">isOnderdeelVan</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">bevatOnderdeel</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">heeftRepresentatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">aanvullendeMetagegevens</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">gerelateerdInformatieobject</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;gerelateerdInformatieobjectGegevens&#34; type definition."
+                                    href="#type_gerelateerdInformatieobjectGegevens">gerelateerdInformatieobjectGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">archiefvormer</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">betrokkene</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;betrokkeneGegevens&#34; type definition."
+                                    href="#type_betrokkeneGegevens">betrokkeneGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">activiteit</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                                    href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                           <span class="scTag">name</span>="<span class="scContent">beperkingGebruik</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a title="Jump to &#34;beperkingGebruikGegevens&#34; type definition."
+                                    href="#type_beperkingGebruikGegevens">beperkingGebruikGegevens</a>
+                              </span>
+                           </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:extension</span>&gt;</div>&lt;/<span class="scTag">xsd:complexContent</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_informatieobjectType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_mdtoType" class="name">mdtoType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>mdtoType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_mdtoType_xibox_button"
+                   class="control"
+                   onclick="switchState('type_mdtoType_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_mdtoType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
+                  <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <div style="margin-left: 3em">&lt;informatieobject&gt; <span class="type">
+                     <a title="Jump to &#34;informatieobjectType&#34; type definition."
+                        href="#type_informatieobjectType">informatieobjectType</a>
+                  </span> &lt;/informatieobject&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een op zichzelf staand geheel van gegevens met een eigen identiteit. (bron: DUTO-eisen)'); viewDocumentation('Element', 'informatieobject', docArray);">?</a>
+               </div>
+               <div style="margin-left: 3em">&lt;bestand&gt; <span class="type">
+                     <a title="Jump to &#34;bestandType&#34; type definition." href="#type_bestandType">bestandType</a>
+                  </span> &lt;/bestand&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een geordende verzameling van gegevens in elektronische vorm, die door een elektronisch apparaat onder één naam kan worden behandeld en aangesproken.'); viewDocumentation('Element', 'bestand', docArray);">?</a>
+               </div>
+               <span class="group" style="margin-left: 1.5em">End Choice</span>
+               <br/>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_mdtoType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_mdtoType_scbox_button"
+                   class="control"
+                   onclick="switchState('type_mdtoType_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_mdtoType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">mdtoType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:choice</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">informatieobject</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;informatieobjectType&#34; type definition."
+                              href="#type_informatieobjectType">informatieobjectType</a>
+                        </span>
+                     </span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">bestand</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;bestandType&#34; type definition." href="#type_bestandType">bestandType</a>
+                        </span>
+                     </span>"/&gt;</div>&lt;/<span class="scTag">xsd:choice</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_mdtoType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_objectType" class="name">objectType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>
+               <ul>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;informatieobjectType&#34; type definition."
+                           href="#type_informatieobjectType">informatieobjectType</a>
+                     </span> (by extension)</li>
+                  <li>
+                     <span class="type">
+                        <a title="Jump to &#34;bestandType&#34; type definition." href="#type_bestandType">bestandType</a>
+                     </span> (by extension)</li>
+               </ul>
+            </td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>objectType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_objectType_xibox_button"
+                   class="control"
+                   onclick="switchState('type_objectType_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_objectType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;identificatie&gt; <span class="type">
+                     <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                        href="#type_identificatieGegevens">identificatieGegevens</a>
+                  </span> &lt;/identificatie&gt; <span class="occurs">[1..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gegevens waarmee het object geïdentificeerd kan worden.'); viewDocumentation('Element', 'identificatie', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;naam&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/naam&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Een betekenisvolle aanduiding waaronder het object bekend is.'); viewDocumentation('Element', 'naam', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_objectType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_objectType_scbox_button"
+                   class="control"
+                   onclick="switchState('type_objectType_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_objectType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">objectType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">identificatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                              href="#type_identificatieGegevens">identificatieGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">naam</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_objectType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_raadpleeglocatieGegevens" class="name">raadpleeglocatieGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>raadpleeglocatieGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_raadpleeglocatieGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_raadpleeglocatieGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_raadpleeglocatieGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;raadpleeglocatieFysiek&gt; <span class="type">
+                     <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                        href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                  </span> &lt;/raadpleeglocatieFysiek&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Actuele fysieke locatie waar het informatieobject ter inzage ligt.'); viewDocumentation('Element', 'raadpleeglocatieFysiek', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;raadpleeglocatieOnline&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:anyURI</span> &lt;/raadpleeglocatieOnline&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Actuele verwijzing naar een online raadpleeglocatie die het informatieobject en de bijbehorende metagegevens weergeeft.'); viewDocumentation('Element', 'raadpleeglocatieOnline', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_raadpleeglocatieGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_raadpleeglocatieGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_raadpleeglocatieGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_raadpleeglocatieGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">raadpleeglocatieGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">raadpleeglocatieFysiek</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;verwijzingGegevens&#34; type definition."
+                              href="#type_verwijzingGegevens">verwijzingGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">raadpleeglocatieOnline</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:anyURI</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_raadpleeglocatieGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_termijnGegevens" class="name">termijnGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>termijnGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_termijnGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_termijnGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_termijnGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;termijnTriggerStartLooptijd&gt; <span class="type">
+                     <a title="Jump to &#34;begripGegevens&#34; type definition."
+                        href="#type_begripGegevens">begripGegevens</a>
+                  </span> &lt;/termijnTriggerStartLooptijd&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Gebeurtenis waarna de looptijd van de termijn start.'); viewDocumentation('Element', 'termijnTriggerStartLooptijd', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;termijnStartdatumLooptijd&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span> &lt;/termijnStartdatumLooptijd&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De datum waarop de trigger heeft plaatsgevonden en de looptijd is gestart.'); viewDocumentation('Element', 'termijnStartdatumLooptijd', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;termijnLooptijd&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:duration</span> &lt;/termijnLooptijd&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De hoeveelheid tijd waarin de termijnEindDatum bereikt wordt, nadat de trigger heeft plaatsgevonden.'); viewDocumentation('Element', 'termijnLooptijd', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;termijnEinddatum&gt; <span class="constraint">union of: [ <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth,<a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date ]</span> &lt;/termijnEinddatum&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('Datum waarop de termijn eindigt.'); viewDocumentation('Element', 'termijnEinddatum', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_termijnGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_termijnGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_termijnGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_termijnGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">termijnGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">termijnTriggerStartLooptijd</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;begripGegevens&#34; type definition."
+                              href="#type_begripGegevens">begripGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">termijnStartdatumLooptijd</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">termijnLooptijd</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:duration</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">termijnEinddatum</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:union</span> 
+                           <span class="scTag">memberTypes</span>="<span class="scContent">
+                              <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYear <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:gYearMonth <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:date</span>"/&gt;</div>&lt;/<span class="scTag">xsd:simpleType</span>&gt;</div>&lt;/<span class="scTag">xsd:element</span>&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_termijnGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_verwijzingGegevens" class="name">verwijzingGegevens</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>verwijzingGegevens</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button"
+                   id="type_verwijzingGegevens_xibox_button"
+                   class="control"
+                   onclick="switchState('type_verwijzingGegevens_xibox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_verwijzingGegevens_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;verwijzingNaam&gt; <span class="type">
+                     <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span> &lt;/verwijzingNaam&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De naam van het object waarnaar verwezen wordt.'); viewDocumentation('Element', 'verwijzingNaam', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;verwijzingIdentificatie&gt; <span class="type">
+                     <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                        href="#type_identificatieGegevens">identificatieGegevens</a>
+                  </span> &lt;/verwijzingIdentificatie&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)"
+                     title="View Documentation"
+                     class="documentation"
+                     onclick="docArray = new Array('De identificatie van het object waarnaar verwezen wordt.'); viewDocumentation('Element', 'verwijzingIdentificatie', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_verwijzingGegevens_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button"
+                   id="type_verwijzingGegevens_scbox_button"
+                   class="control"
+                   onclick="switchState('type_verwijzingGegevens_scbox'); return false;"
+                   style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_verwijzingGegevens_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xsd:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">verwijzingGegevens</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">verwijzingNaam</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xsd" title="Find out namespace of 'xsd' prefix">xsd</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">1</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xsd:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">verwijzingIdentificatie</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;identificatieGegevens&#34; type definition."
+                              href="#type_identificatieGegevens">identificatieGegevens</a>
+                        </span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">1</span>"/&gt;</div>&lt;/<span class="scTag">xsd:sequence</span>&gt;</div>&lt;/<span class="scTag">xsd:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_verwijzingGegevens_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <div id="legend">
+         <h2>
+            <a name="Legend">Legend</a>
+         </h2>
+         <div style="float: left; width: 15em;">
+            <h3 style="margin-bottom: 0px;">Complex Type:</h3>
+            <div class="hint" style="margin-left: 0em;">Schema Component Type</div>
+         </div>
+         <div style="float: left; width: 15em;">
+            <h3 style="margin-bottom: 0px;">
+               <span class="name">AusAddress</span>
+            </h3>
+            <div class="hint" style="margin-left: 0em;">Schema Component Name</div>
+         </div>
+         <table class="hierarchy" style="clear : both">
+            <tr>
+               <th>Super-types:</th>
+               <td>
+                  <span class="type" style="color: #0000FF; text-decoration:underline;">Address</span> &lt; <span class="current">AusAddress</span> (by extension)</td>
+            </tr>
+            <tr>
+               <th>Sub-types:</th>
+               <td>
+                  <ul>
+                     <li>
+                        <span class="type" style="color: #0000FF; text-decoration:underline;">QLDAddress</span> (by restriction)</li>
+                  </ul>
+               </td>
+            </tr>
+         </table>
+         <div class="hint">If this schema component is a type definition, its type hierarchy is shown in a gray-bordered box.</div>
+         <table class="properties">
+            <tr>
+               <th>Name</th>
+               <td>AusAddress</td>
+            </tr>
+            <tr>
+               <th>
+                  <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+               </th>
+               <td>no</td>
+            </tr>
+         </table>
+         <div class="hint">The table above displays the properties of this schema component.</div>
+         <div class="sample box">
+            <div>
+               <span class="caption">XML Instance Representation</span>
+            </div>
+            <div class="contents">
+               <span style="margin-left: 0em">&lt;...</span>
+               <span class="newFields">
+                  <span> country="<span class="fixed">Australia</span>"</span>
+               </span>&gt; <br/>
+               <span style="margin-left: 1.5em" class="inherited">&lt;unitNo&gt; <span class="type">string</span> &lt;/unitNo&gt; <span class="occurs">[0..1]</span>
+               </span>
+               <br/>
+               <span style="margin-left: 1.5em" class="inherited">&lt;houseNo&gt; <span class="type">string</span> &lt;/houseNo&gt; <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <span style="margin-left: 1.5em" class="inherited">&lt;street&gt; <span class="type">string</span> &lt;/street&gt; <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a>
+                  <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <span style="margin-left: 3em" class="inherited">&lt;city&gt; <span class="type">string</span> &lt;/city&gt; <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <span style="margin-left: 3em" class="inherited">&lt;town&gt; <span class="type">string</span> &lt;/town&gt; <span class="occurs">[1]</span>
+               </span>
+               <br/>
+               <span class="group" style="margin-left: 1.5em">End Choice</span>
+               <br/>
+               <span class="newFields">
+                  <span style="margin-left: 1.5em">&lt;state&gt; <span class="type" style="text-decoration:underline;">AusStates</span> &lt;/state&gt; <span class="occurs">[1]</span>
+                  </span>
+                  <br/>
+                  <span style="margin-left: 1.5em">&lt;postcode&gt; <span class="constraint">string &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;</span> &lt;/postcode&gt; <span class="occurs">[1]</span>
+                     <a href="javascript:void(0)"
+                        title="View Documentation"
+                        class="documentation"
+                        onclick="docArray = new Array('Post code must be a four-digit number.'); viewDocumentation('Element', 'postcode', docArray);">?</a>
+                  </span>
+                  <br/>
+               </span>
+               <span style="margin-left: 0em">&lt;/...&gt;</span>
+               <br/>
+            </div>
+         </div>
+         <div class="hint">
+            <p>The XML Instance Representation table above shows the schema component's content as an XML instance.</p>
+            <ul>
+               <li>The minimum and maximum occurrence of elements and attributes are provided in square brackets, e.g. [0..1].</li>
+               <li>Model group information are shown in gray, e.g. Start Choice ... End Choice.</li>
+               <li>For type derivations, the elements and attributes that have been added to or changed from the base type's content are shown in <span style="font-weight: bold">bold</span>.</li>
+               <li>If an element/attribute has a fixed value, the fixed value is shown in green, e.g. country="Australia".</li>
+               <li>Otherwise, the type of the element/attribute is displayed.
+               <ul>
+                     <li>If the element/attribute's type is in the schema, a link is provided to it.</li>
+                     <li>For local simple type definitions, the constraints are displayed in angle brackets, e.g. &lt;&lt;<em>pattern</em> = [1-9][0-9]{3}&gt;&gt;.</li>
+                  </ul>
+               </li>
+               <li>If a local element/attribute has documentation, it will be displayed in a window that pops up when the question mark inside the attribute or next to the element is clicked, e.g. &lt;postcode&gt;.</li>
+            </ul>
+         </div>
+         <div class="schemaComponent box">
+            <div>
+               <span class="caption">Schema Component Representation</span>
+            </div>
+            <div class="contents">
+               <span style="margin-left: 0em">&lt;<span class="scTag">complexType</span>
+                  <span class="scTag">name</span>="<span class="scContent">AusAddress</span>"&gt;</span>
+               <br/>
+               <span style="margin-left: 1.5em">&lt;<span class="scTag">complexContent</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 3em">&lt;<span class="scTag">extension</span>
+                  <span class="scTag">base</span>="<span class="scContent">
+                     <span class="type" style="text-decoration:underline;">Address</span>
+                  </span>"&gt;</span>
+               <br/>
+               <span style="margin-left: 4.5em">&lt;<span class="scTag">sequence</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 6em">&lt;<span class="scTag">element</span>
+                  <span class="scTag">name</span>="<span class="scContent">state</span>" <span class="scTag">type</span>="<span class="scContent">
+                     <span class="type" style="text-decoration:underline;">AusStates</span>
+                  </span>"/&gt;</span>
+               <br/>
+               <span style="margin-left: 6em">&lt;<span class="scTag">element</span>
+                  <span class="scTag">name</span>="<span class="scContent">postcode</span>"&gt;</span>
+               <br/>
+               <span style="margin-left: 7.5em">&lt;<span class="scTag">simpleType</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 9em">&lt;<span class="scTag">restriction</span>
+                  <span class="scTag">base</span>="<span class="scContent">
+                     <span class="type">string</span>
+                  </span>"&gt;</span>
+               <br/>
+               <span style="margin-left: 10.5em">&lt;<span class="scTag">pattern</span>
+                  <span class="scTag">value</span>="<span class="scContent">[1-9][0-9]{3}</span>"/&gt;</span>
+               <br/>
+               <span style="margin-left: 9em">&lt;/<span class="scTag">restriction</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 7.5em">&lt;/<span class="scTag">simpleType</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 6em">&lt;/<span class="scTag">element</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 4.5em">&lt;/<span class="scTag">sequence</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 4.5em">&lt;<span class="scTag">attribute</span>
+                  <span class="scTag">name</span>="<span class="scContent">country</span>" <span class="scTag">type</span>="<span class="scContent">
+                     <span class="type">string</span>
+                  </span>" <span class="scTag">fixed</span>="<span class="scContent">Australia</span>"/&gt;</span>
+               <br/>
+               <span style="margin-left: 3em">&lt;/<span class="scTag">extension</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 1.5em">&lt;/<span class="scTag">complexContent</span>&gt;</span>
+               <br/>
+               <span style="margin-left: 0em">&lt;/<span class="scTag">complexType</span>&gt;</span>
+               <br/>
+            </div>
+         </div>
+         <div class="hint">The Schema Component Representation table above displays the underlying XML representation of the schema component. (Annotations are not shown.)</div>
+         <div style="text-align: right; clear: both;">
+            <a href="#top">top</a>
+         </div>
+         <hr/>
+      </div>
+      <div id="glossary">
+         <h2>
+            <a name="Glossary">Glossary</a>
+         </h2>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Abstract">Abstract</a> 
+            </span>(Applies to complex type definitions and element declarations). An abstract element or complex type cannot used to validate an element instance. If there is a reference to an abstract element, only element declarations that can substitute the abstract element can be used to validate the instance. For references to abstract type definitions, only derived types can be used.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_All">All Model Group</a> 
+            </span>Child elements can be provided <em>in any order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-all"
+               href="http://www.w3.org/TR/xmlschema-1/#element-all">http://www.w3.org/TR/xmlschema-1/#element-all</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Choice">Choice Model Group</a> 
+            </span>
+            <em>Only one</em> from the list of child elements and model groups can be provided in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-choice"
+               href="http://www.w3.org/TR/xmlschema-1/#element-choice">http://www.w3.org/TR/xmlschema-1/#element-choice</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_CollapseWS">Collapse Whitespace Policy</a> 
+            </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32). Then, collapse contiguous sequences of space characters into single space character, and remove leading and trailing space characters.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_ElemBlock">Disallowed Substitutions</a> 
+            </span>(Applies to element declarations). If <em>substitution</em> is specified, then <a title="Look up 'substitution group' in glossary" href="#term_SubGroup">substitution group</a> members cannot be used in place of the given element declaration to validate element instances. If <em>derivation methods</em>, e.g. extension, restriction, are specified, then the given element declaration will not validate element instances that have types derived from the element declaration's type using the specified derivation methods. Normally, element instances can override their declaration's type by specifying an <code>xsi:type</code> attribute.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Key">Key Constraint</a> 
+            </span>Like <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>, but additionally requires that the specified value(s) must be provided. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions"
+               href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_KeyRef">Key Reference Constraint</a> 
+            </span>Ensures that the specified value(s) must match value(s) from a <a title="Look up 'Key Constraint' in glossary" href="#term_Key">Key Constraint</a> or <a title="Look up 'Uniqueness Constraint' in glossary" href="#term_Unique">Uniqueness Constraint</a>. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions"
+               href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_ModelGroup">Model Group</a> 
+            </span>Groups together element content, specifying the order in which the element content can occur and the number of times the group of element content may be repeated. See: <a title="http://www.w3.org/TR/xmlschema-1/#Model_Groups"
+               href="http://www.w3.org/TR/xmlschema-1/#Model_Groups">http://www.w3.org/TR/xmlschema-1/#Model_Groups</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Nillable">Nillable</a> 
+            </span>(Applies to element declarations). If an element declaration is nillable, instances can use the <code>xsi:nil</code> attribute. The <code>xsi:nil</code> attribute is the boolean attribute, <em>nil</em>, from the <em>http://www.w3.org/2001/XMLSchema-instance</em> namespace. If an element instance has an <code>xsi:nil</code> attribute set to true, it can be left empty, even though its element declaration may have required content.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Notation">Notation</a> 
+            </span>A notation is used to identify the format of a piece of data. Values of elements and attributes that are of type, NOTATION, must come from the names of declared notations. See: <a title="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations"
+               href="http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations">http://www.w3.org/TR/xmlschema-1/#cNotation_Declarations</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_PreserveWS">Preserve Whitespace Policy</a> 
+            </span>Preserve whitespaces exactly as they appear in instances.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_TypeFinal">Prohibited Derivations</a> 
+            </span>(Applies to type definitions). Derivation methods that cannot be used to create sub-types from a given type definition.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_TypeBlock">Prohibited Substitutions</a> 
+            </span>(Applies to complex type definitions). Prevents sub-types that have been derived using the specified derivation methods from validating element instances in place of the given type definition.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_ReplaceWS">Replace Whitespace Policy</a> 
+            </span>Replace tab, line feed, and carriage return characters with space character (Unicode character 32).</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Sequence">Sequence Model Group</a> 
+            </span>Child elements and model groups must be provided <em>in the specified order</em> in instances. See: <a title="http://www.w3.org/TR/xmlschema-1/#element-sequence"
+               href="http://www.w3.org/TR/xmlschema-1/#element-sequence">http://www.w3.org/TR/xmlschema-1/#element-sequence</a>.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_SubGroup">Substitution Group</a> 
+            </span>Elements that are <em>members</em> of a substitution group can be used wherever the <em>head</em> element of the substitution group is referenced.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_ElemFinal">Substitution Group Exclusions</a> 
+            </span>(Applies to element declarations). Prohibits element declarations from nominating themselves as being able to substitute a given element declaration, if they have types that are derived from the original element's type using the specified derivation methods.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_TargetNS">Target Namespace</a> 
+            </span>The target namespace identifies the namespace that components in this schema belongs to. If no target namespace is provided, then the schema components do not belong to any namespace.</p>
+         <p>
+            <span class="glossaryTerm">
+               <a name="term_Unique">Uniqueness Constraint</a> 
+            </span>Ensures uniqueness of an element/attribute value, or a combination of values, within a specified scope. See: <a title="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions"
+               href="http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions">http://www.w3.org/TR/xmlschema-1/#cIdentity-constraint_Definitions</a>.</p>
+         <div style="text-align: right; clear: both;">
+            <a href="#top">top</a>
+         </div>
+         <hr/>
+      </div>
+      <p class="footer">Generated by <a href="http://xml.fiforms.org/xs3p/">xs3p</a> (<a href="http://titanium.dstc.edu.au/xml/xs3p">old link</a>)
+               . Last modified: <script type="text/javascript">
+<!--
+document.write(document.lastModified);
+// -->
+</script>
+      </p>
+   </body>
+</html>

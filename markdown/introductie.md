@@ -5,9 +5,9 @@ Dit gedeelte beschrijft welke documenten de documentatieset bevat en hoe het XML
 ## Inhoud documentatieset
 De documentatieset bestaat uit de volgende links en mappen in een .zip bestand.
 
-MDTO-XML 1.0.1.xsd: Het XML-schema. (Eerdere versie MDTO-XML 1.0.xsd)
-MDTO-XML 1.0.1.html: Weergave van het schema als HTML-pagina. Bedoeld voor lezers die geen speciale viewer voor XML-schema’s hebben.  (Eerdere versie MDTO-XML 1.0.html) 
-MDTO-XML 1.0.1 Voorbeelden: Map met voorbeelden van XML-bestanden conform het XML-schema. 
+- MDTO-XML 1.0.1.xsd: Het XML-schema. (Eerdere versie MDTO-XML 1.0.xsd)
+- MDTO-XML 1.0.1.html: Weergave van het schema als HTML-pagina. Bedoeld voor lezers die geen speciale viewer voor XML-schema’s hebben.  (Eerdere versie MDTO-XML 1.0.html) 
+- MDTO-XML 1.0.1 Voorbeelden: Map met voorbeelden van XML-bestanden conform het XML-schema. 
 
 Aanwijzing voor gebruik:
 
@@ -16,25 +16,25 @@ Pak het .zip bestand uit en sla daarbij het bestand op op uw computer
 Open het bestand met de juiste applicatie vanuit de bestandenmap op uw computer
 
 
-### Toelichting op de voorbeelden
+## Toelichting op de XML voorbeelden
 De voorbeeldbestanden zijn ter informatie en maken geen onderdeel uit van de definitie van het XML-schema en zijn dus ook geen onderdeel van de norm. Het doel van de voorbeelden is dat de lezer zich een voorstelling kan maken hoe een XML-bestand conform het XML-schema er uit hoort te zien. De voorbeelden zijn zo realistisch mogelijk. Voor een zo volledig mogelijke representatie zijn er ook fictieve waarden gebruikt, of combinaties van waarden gebruikt die in de praktijk niet of nauwelijks zullen voorkomen. 
 
 De volgende voorbeelden zijn opgenomen
 
-- **MDTO-XML 1.0.1 Voorbeeld Serie Informatieobject.xml:**
+- **MDTO-XML 1.0.1 Voorbeeld Serie Informatieobject.xml:**\
 Metagegevens voor de serie “Deelprogramma Kust. Voorbereiding 2010-2014 adviezen en voorstellen voorkeursstrategie Kust en strategische beslissing Zand”.
-- **MDTO-XML 1.0.1 Voorbeeld Dossier Informatieobject.xml:**
+- **MDTO-XML 1.0.1 Voorbeeld Dossier Informatieobject.xml:**\
 Metagegevens voor het dossier “Brondocumenten en literatuur bij synthesedocument voorkeursstrategie Kust en strategische beslissing Zand”.
-- **MDTO-XML 1.0.1 Voorbeeld Archiefstuk Informatieobject.xml:**
+- **MDTO-XML 1.0.1 Voorbeeld Archiefstuk Informatieobject.xml:**\
 Metagegevens voor het informatieobject “Atelier Kustkwaliteit, 2011. Ontwerpstudie Dwarsdoorsneden kust, vier Kustdoorsneden in beeld, Werkboek 2, Delft”. 
-- **MDTO-XML 1.0.1 Voorbeeld Bestand.xml:**
+- **MDTO-XML 1.0.1 Voorbeeld Bestand.xml:**\
 Metagegevens voor het bestand “DC-2015_1753-1.PDF” dat de representatie is van “Atelier Kustkwaliteit, 2011. Ontwerpstudie Dwarsdoorsneden kust, vier Kustdoorsneden in beeld, Werkboek 2, Delft”.
 
 De hiërarchische relaties tussen de voorbeelden staan weergegeven in het volgende schema: 
 
 ![image](images/XML-voorbeelden-structuur.png)
 
-### Relatie tussen het MDTO metagegevensschema en het MDTO-XML schema
+## Verhouding MDTO metagegevensschema en het MDTO-XML schema
 Het XML-schema is op de volgende manier afgeleid van het metagegevensschema:
 
 - Op het hoogste niveau bevat het schema één element “MDTO” van het type “mdtoType”. Dit element is bedoeld om te markeren dat het XML-bestand MDTO-metagegevens bevat.
