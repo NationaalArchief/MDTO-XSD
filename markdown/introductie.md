@@ -32,7 +32,7 @@ Metagegevens voor het bestand “DC-2015_1753-1.PDF” dat de representatie is v
 
 De hiërarchische relaties tussen de voorbeelden staan weergegeven in het volgende schema: 
 
-![image](images/images/XML-voorbeelden-structuur.png)
+![image](images/XML-voorbeelden-structuur.png)
 
 ### Relatie tussen het MDTO metagegevensschema en het MDTO-XML schema
 Het XML-schema is op de volgende manier afgeleid van het metagegevensschema:
