@@ -39,4 +39,6 @@ De norm MDTO is één van de kennisproducten van het Nationaal Archief die overh
 Het Nationaal Archief ontwikkelt zijn kennisproducten in co-creatie met het werkveld. Bovenaan deze pagina staan de verschillende kanalen die gebruikt kunnen worden om feedback te geven op de MDTO. 
 
 Het is ook mogelijk om bij een nieuw ontwikkeltraject voor kennisproduct een bijdrage leveren door deel te nemen aan een redactiegroep voor een kennisproduct. Zie voor meer informatie: https://www.nationaalarchief.nl/archiveren/kennisbank/ontwikkelagenda-kennisproducten
+
+De beheerprocedure van kennisproducten van het Nationaal Archief is gebaseerd op het [beheer- en ontwikkelmodel voor open standaarden (BOMOS)](https://www.logius.nl/onze-dienstverlening/infrastructuur/bomos/documentatie) en het daarin opgenomen activiteitendiagram. Vervolgens is daarbij specifiek voor MDTO een addendum voorzien waarin wordt beschreven hoe het beheer en de activiteiten voor deze norm precies ingericht zijn en ingevuld worden. Opnieuw volgens het BOMOS Activiteitendiagram. Meer informatie hierover kun je vinden in het [beheerplan voor kennisproducten](https://www.nationaalarchief.nl/sites/default/files/field-file/Beheerplan_kennisproducten_NA_v1_0.pdf).
 </details>
