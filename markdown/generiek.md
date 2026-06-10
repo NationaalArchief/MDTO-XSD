@@ -1,5 +1,3 @@
->**MDTO is op github in aanbouw in aanloop naar besluitvorming in het OBDO**. **Dit werk is NOG NIET COMPLEET.** Het volledig aanbieden van MDTO via github wordt verwacht vanaf eind Q2 2026. Maak tot die tijd gebruik van de versie zoals die op [nationaalarchief.nl](https://www.nationaalarchief.nl/archiveren/mdto) staat.
-
 # MDTO
 
 Deze repository vormt onderdeel van MDTO (Metagegevens voor Duurzaam Toegankelijke Overheidsinformatie). MDTO is een Nederlandse standaard voor het vastleggen van metagegevens bij overheidsinformatie, zodat deze vindbaar, beschikbaar, leesbaar, interpreteerbaar, betrouwbaar en toekomstbestendig is voor iedereen die daartoe gerechtigd is.
