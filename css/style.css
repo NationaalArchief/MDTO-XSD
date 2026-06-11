@@ -1,3 +1,8 @@
+body {
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 /* GitHub-like table styling */
 table {
     border-collapse: collapse;
@@ -16,6 +21,8 @@ tr:nth-child(odd) {
 
 th {
     background-color: #007bc7;
+    padding-top: 2px;
+    padding-bottom: 2px;
     font-weight: 600;
     color: white;
 }
@@ -49,4 +56,9 @@ th {
     background: transparent;
     white-space: nowrap;
     /* voorkomt extra uitrekken */
+}
+
+/* Hide the automatic ReSpec details metadata so custom markdown can replace it */
+.head details {
+    display: none !important;
 }
