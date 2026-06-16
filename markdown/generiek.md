@@ -16,17 +16,17 @@ MDTO bestaat uit een aantal modules waarvan een deel behoort tot de norm en een 
 | [Specificatie Submission Information Package (SIP)](https://nationaalarchief.github.io/MDTO-SIP-specificatie/) | Een SIP is een verzameling informatieobjecten met bijbehorende representaties en metagegevens voor uitwisseling tussen informatiesystemen.   | Norm        |
 | [Definitie van MDTO-conform](https://nationaalarchief.github.io/MDTO-Conform/)                                 | Uitleg wanneer een informatiesysteem aan MDTO voldoet.                                                                                       | Norm        |
 | [Aanleverproces Submission Information Package](https://nationaalarchief.github.io/MDTO-SIP-aanleverproces/)   | Beschrijving van het proces om een SIP uit te wisselen tussen twee informatiesystemen.                                                       | Handreiking |
-| RDF-ontologie                                                                                                  | Beschrijving van het metagegevensschema in RDF.                                                                                              | Handreiking |
-| [Mapping van TMLO/TMR naar MDTO](https://nationaalarchief.github.io/MDTO-Mapping-TMLO-TMR/)                    | Beschrijving hoe bestaande TMLO- en TMR-metagegevens vertaald worden naar MDTO-metagegevens.                                                 | Handreiking |
+| [RDF-ontologie ](https://github.com/NationaalArchief/MDTO-RDF/)                                                | Beschrijving van het metagegevensschema in RDF.                                                                                              | Handreiking |
+| [Verhouding tussen TMLO/TMR en MDTO](https://nationaalarchief.github.io/MDTO-TMLO-TMR/)                        | Beschrijving hoe bestaande TMLO- en TMR-metagegevens vertaald worden naar MDTO-metagegevens.                                                 | Handreiking |
 
 Ten slotte zijn er, ter informatie, een aantal niet-normerende bijlages:
 
-- **Stappenplan** - Een stapsgewijze aanpak voor het toepassen van  Metagegevens Duurzaam Toegankelijke Overheidsinformatie (MDTO) in de informatiesystemen van een organisatie.
+- **[Stappenplan](https://nationaalarchief.github.io/MDTO-Stappenplan/)** - Een stapsgewijze aanpak voor het toepassen van  Metagegevens Duurzaam Toegankelijke Overheidsinformatie (MDTO) in de informatiesystemen van een organisatie.
 
-- **Overzicht belangrijke wijzingen** - Een overzicht van de belangrijke wijzigingen van MDTO ten opzichte van TMLO en TMR. 
+- **[Overzicht belangrijke wijzingen](https://nationaalarchief.github.io/MDTO-TMLO-TMR/#wijzigingen-ten-opzichte-van-tmlo-en-tmr)** - Een overzicht van de belangrijke wijzigingen van MDTO ten opzichte van TMLO en TMR. 
 
-- **Antwoorden op veelgestelde vragen** - Een overzicht van vragen en antwoorden die met betrekking tot MDTO gesteld zijn. Zoals hoe MDTO tot stand is gekomen en de onderbouwing van gemaakte keuzes. Deze bijlage wordt uitgebreid als nieuwe vragen daar aanleiding toe geven.
-  https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/
+- **[Antwoorden op veelgestelde vragen](https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/)** - Een overzicht van vragen en antwoorden die met betrekking tot MDTO gesteld zijn. Zoals hoe MDTO tot stand is gekomen en de onderbouwing van gemaakte keuzes. Deze bijlage wordt uitgebreid als nieuwe vragen daar aanleiding toe geven.
+
 </details>
 
 <div><h4><small>Kennisproducten Nationaal Archief</small></h4></div>
