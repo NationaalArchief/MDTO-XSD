@@ -26,6 +26,7 @@ Ten slotte zijn er, ter informatie, een aantal niet-normerende bijlages:
 - **[Overzicht belangrijke wijzingen](https://nationaalarchief.github.io/MDTO-TMLO-TMR/#wijzigingen-ten-opzichte-van-tmlo-en-tmr)** - Een overzicht van de belangrijke wijzigingen van MDTO ten opzichte van TMLO en TMR. 
 
 - **[Antwoorden op veelgestelde vragen](https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/)** - Een overzicht van vragen en antwoorden die met betrekking tot MDTO gesteld zijn. Zoals hoe MDTO tot stand is gekomen en de onderbouwing van gemaakte keuzes. Deze bijlage wordt uitgebreid als nieuwe vragen daar aanleiding toe geven.
+</details>
 
 ## Kennisproducten Nationaal Archief
 <details><summary><b>Klik hier voor informatie over kennisproducten van het Nationaal Archief.</b></summary>
