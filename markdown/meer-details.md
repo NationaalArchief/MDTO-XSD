@@ -36,7 +36,7 @@ info@nationaalarchief.nl
 
 | Versie  | Auteur            | Standaardisatieraad                                                                         | OBDO | Toelichting                                  |
 | :------ | :---------------- | :------------------------------------------------------------------------------------------ | :--- | :------------------------------------------- |
-| **1.0** | Nationaal Archief | Geaccordeerd op 7 april 2021 ([Stukken en verslag](https://kiacommunity.nl/thoughts/18354)) | —    |<ul><li>[Revisiehistorie](https://github.com/NationaalArchief/MDTO-XSD/commits/master/)<li>[Wijzigingen 2021–2026](https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/#welke-wijzigingen-zijn-gedaan-aan-mdto-voor-de-overgang-naar-github)</li></ul>|
+| **1.0** | Nationaal Archief | Geaccordeerd op 7 april 2021 ([Stukken en verslag](https://kiacommunity.nl/thoughts/18354)) | —    |<ul><li>[Revisiehistorie](https://github.com/NationaalArchief/MDTO-XSD/commits/main/)<li>[Wijzigingen 2021–2026](https://nationaalarchief.github.io/MDTO-Veelgestelde-vragen/#welke-wijzigingen-zijn-gedaan-aan-mdto-voor-de-overgang-naar-github)</li></ul>|
 
 ---
 
